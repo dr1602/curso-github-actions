@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout del Repositorio
+      - uses: actions/checkout@v4
+
+      # 2. Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Instalar ts-node
+      - name: Install ts-node
+        run: npm install -g ts-node typescript
+
+      # 4. Ejecutar el script TypeScript
+      - name: Execute TypeScript Script
+        run: ts-node index.ts

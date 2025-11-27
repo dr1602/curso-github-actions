@@ -1,4 +1,4 @@
-name: CI
+name: hola-mundo.ts gitHub actions
 
 on:
   push:

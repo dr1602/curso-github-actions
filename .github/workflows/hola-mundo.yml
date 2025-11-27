@@ -1,12 +1,9 @@
 name: hola-mundo.ts gitHub actions
+run-name: ¡Estoy aprendiendo GitHub actions!
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
-
+  [push]
+  
 jobs:
   build:
     runs-on: ubuntu-latest

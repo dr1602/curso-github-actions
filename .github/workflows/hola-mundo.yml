@@ -10,11 +10,14 @@ jobs:
 
     steps:
       # 1. Checkout del Repositorio
-      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       # 3. Instalar ts-node
       - name: Install ts-node
-        run: npm install -g ts-node typescript
+        run: npm install
 
       # 4. Ejecutar el script TypeScript
       - name: Execute TypeScript Script

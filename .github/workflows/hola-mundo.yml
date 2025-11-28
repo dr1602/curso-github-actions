@@ -27,4 +27,4 @@ jobs:
 
       # 4. Ejecutar el script TypeScript
       - name: Execute TypeScript Script (ESM mode)
-        run: npx ts-node --esm index.ts
+        run: npx node --loader ts-node/esm index.ts

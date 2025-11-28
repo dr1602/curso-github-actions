@@ -26,5 +26,5 @@ jobs:
         run: npm install
 
       # 4. Ejecutar el script TypeScript
-      - name: Execute TypeScript Script
-        run: npx ts-node index.ts
+      - name: Execute TypeScript Script (ESM mode)
+        run: npx ts-node --esm index.ts

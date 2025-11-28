@@ -18,4 +18,4 @@ jobs:
 
       # 4. Ejecutar el script TypeScript
       - name: Execute TypeScript Script
-        run: ts-node index.ts
+        run: node --loader ts-node/esm index.ts

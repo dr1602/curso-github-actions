@@ -1,0 +1,67 @@
+name: three-triggers practice
+run-name: ¡Implemento un ejercicio de triggers dentro de workflows de github Actions!
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '**.ts'
+  pull_request:
+    types:
+      - opened
+      - labeled
+    branches:
+      - 'main'
+    paths:
+      - '**.ts'
+  issues:
+    types:
+      - opened
+      - edited
+      - closed
+  issue_comment:
+    types:
+      - opened
+      - deleted
+  workflow_dispatch:
+    inputs:
+      alerta:
+        description: 'nivel'
+        required: false
+        default: medio
+        type: choice
+        options:
+          - bajo
+          - medio
+  
+
+jobs:
+  three-triggers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+  
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '20'
+  
+      - name: Install ts-node
+        run: npm install
+  
+      - name: Execute Typescript Script (ESM mode)
+        run: npx ts-node --transpileOnly index.ts
+        
+  pr_commented:
+    name: PR comment
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'issue_comment' && github.event.issue.pull_request}}
+
+    steps:
+      - name: Check comment event
+        run: echo 'Comentario en un Pull request detectado. Ejecutando lógica'

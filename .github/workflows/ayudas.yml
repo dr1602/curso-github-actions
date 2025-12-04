@@ -23,3 +23,9 @@ env:
 // != No Igual
 && Y
 || Or
+
+// Principales funciones
+if: ${{ <expresión> }}
+contains(github.event.issue.labels.*.name, 'bug')
+toJSON(value)
+fromJSON(value)

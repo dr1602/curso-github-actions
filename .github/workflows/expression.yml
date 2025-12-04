@@ -12,16 +12,22 @@ on:
         default: 'Juan'
         type: string
 jobs:
+  saludar:
+    if: ${{ inputs.nombre != null}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr script
+        run: echo ${{ input.nombre }}, es un placer saludarlo.
   mayor:
     if: ${{ fromJSON(inputs.edad) >= 18 }}
     runs-on: unbuntu-latest
     steps:
       - name: Correr script
-        run: echo ${{ inputs.nombre }} es mayor de edad
+        run: echo ${{ inputs.nombre }} es mayor de edad.
   menor:
     if: ${{ fromJSON(inputs.edad) < 18 }}
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
-        run: echo ${{ inputs.nombre }} es menor de edad
+        run: echo ${{ inputs.nombre }} es menor de edad.
       

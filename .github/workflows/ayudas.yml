@@ -11,15 +11,15 @@ env:
   stringComillas: ${{ 'Hola' }}
 
 // Operadores
-() Agrupación lógica
-[] Índice
-.  Referencia de propiedad
-!  Not
-< Menor que
-<= Menor o igual que
-> Mayor
->= Mayor o igual que
-== Igual
-!= No Igual
+// () Agrupación lógica
+//  Índice
+// .  Referencia de propiedad
+// !  Not
+// < Menor que
+// <= Menor o igual que
+// > Mayor
+// >= Mayor o igual que
+// == Igual
+// != No Igual
 && Y
 || Or

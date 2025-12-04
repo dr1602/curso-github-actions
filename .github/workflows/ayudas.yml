@@ -1,0 +1,11 @@
+// Literales
+
+env:
+  nulo: ${{ null }}
+  booleano: ${{ false }}
+  numeroEntero: ${{ 711 }}
+  numeroFlotante: ${{ -9.2 }}
+  numeroHexadecimal: ${{ 0xff }}
+  numeroExponencial: ${{ -2.99e-2 }}
+  string: Hola
+  stringComillas: ${{ 'Hola' }}

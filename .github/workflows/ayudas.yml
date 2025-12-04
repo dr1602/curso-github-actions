@@ -9,3 +9,17 @@ env:
   numeroExponencial: ${{ -2.99e-2 }}
   string: Hola
   stringComillas: ${{ 'Hola' }}
+
+// Operadores
+() Agrupación lógica
+[] Índice
+.  Referencia de propiedad
+!  Not
+< Menor que
+<= Menor o igual que
+> Mayor
+>= Mayor o igual que
+== Igual
+!= No Igual
+&& Y
+|| Or
